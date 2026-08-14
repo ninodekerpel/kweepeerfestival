@@ -1,0 +1,466 @@
+/* ===== Kweepeer Festival — huisstijl ===== */
+:root {
+  --cream: #FBF2DE;
+  --card: #FFFCF3;
+  --groen: #33502C;
+  --groen-zacht: #57703A;
+  --olijf: #7C8C3F;
+  --goud: #E9A83B;
+  --geel: #F2C14E;
+  --terra: #C7562F;
+  --ink: #171412;
+  --bruin: #5C3A1E;
+  --korst: #8C5A2B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--groen);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, .serif { font-family: 'Fraunces', 'TeX Gyre Bonum', serif; }
+
+a { color: inherit; }
+
+/* ===== header & menu ===== */
+.site-header { text-align: center; padding: 34px 16px 6px; }
+
+.logo-link { display: inline-block; text-decoration: none; text-align: center; line-height: 1; }
+.logo-woord {
+  display: block;
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 900;
+  font-size: clamp(38px, 6vw, 54px);
+  color: var(--groen);
+}
+.logo-woord .peer { color: var(--terra); }
+.logo-fest {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: clamp(12px, 1.8vw, 16px);
+  letter-spacing: 12px;
+  text-indent: 12px;
+  text-transform: uppercase;
+  color: var(--goud);
+}
+.logo-link:hover .logo-woord .peer { color: var(--goud); transition: color .2s; }
+
+/* grote variant op de homepagina */
+.logo-groot .logo-woord { font-size: clamp(54px, 10vw, 88px); }
+.logo-groot .logo-fest { font-size: clamp(15px, 2.6vw, 23px); letter-spacing: 14px; text-indent: 14px; margin-top: 10px; }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 12px 8px;
+}
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--groen);
+  border: 2px solid var(--groen);
+  border-radius: 999px;
+  padding: 9px 20px 10px;
+  background: var(--card);
+  box-shadow: 3px 3px 0 rgba(51, 80, 44, .18);
+  transition: background .15s, color .15s, transform .15s, box-shadow .15s;
+}
+.menu a:hover {
+  background: var(--goud);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 rgba(51, 80, 44, .22);
+}
+.menu a.active {
+  background: var(--groen);
+  color: var(--cream);
+}
+
+/* ===== paginakop ===== */
+.page-head { text-align: center; padding: 26px 16px 4px; }
+.page-head .pill {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 12.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 8px 26px 9px;
+  border-radius: 999px;
+}
+.page-head h1 {
+  font-weight: 900;
+  font-size: clamp(44px, 8vw, 76px);
+  line-height: 1.02;
+  margin-top: 18px;
+}
+.page-head h1 .accent { color: var(--terra); }
+.page-head .sub {
+  font-weight: 600;
+  font-size: clamp(15px, 2.6vw, 21px);
+  letter-spacing: 11px;
+  text-indent: 11px;
+  color: var(--goud);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.page-head .tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--groen-zacht);
+  margin-top: 14px;
+}
+
+/* ===== inhoud & kaarten ===== */
+main { flex: 1; width: 100%; max-width: 880px; margin: 0 auto; padding: 26px 20px 40px; }
+
+.kaart {
+  background: var(--card);
+  border: 2.5px solid var(--groen);
+  border-radius: 22px;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 7px 7px 0 rgba(51, 80, 44, .16);
+}
+.kaart + .kaart { margin-top: 22px; }
+
+.kaart .scheiding {
+  width: 2px; align-self: stretch; flex: none;
+  background-image: linear-gradient(var(--goud) 55%, transparent 45%);
+  background-size: 100% 12px;
+}
+
+.kaart h2 { font-weight: 700; font-size: 24px; line-height: 1.15; }
+.kaart p { font-size: 14.5px; color: var(--groen-zacht); margin-top: 6px; }
+.kaart p b { font-weight: 600; color: var(--groen); }
+
+.tijd {
+  font-weight: 700;
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-size: 21px;
+  color: var(--terra);
+  white-space: nowrap;
+  min-width: 150px;
+  text-align: center;
+  line-height: 1.2;
+  flex: none;
+}
+.tijd small {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--olijf);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.prijs {
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--terra);
+  white-space: nowrap;
+  flex: none;
+  min-width: 96px;
+  text-align: center;
+}
+.prijs small {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--goud);
+}
+
+.icoon { flex: none; width: 74px; display: flex; justify-content: center; }
+.icoon svg { width: 100%; height: auto; overflow: visible; }
+
+/* ===== golf + footer ===== */
+.golf { display: block; width: 100%; height: 26px; }
+
+.site-footer {
+  background: var(--groen);
+  color: var(--cream);
+  text-align: center;
+  padding: 30px 20px 34px;
+}
+.site-footer .groot {
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: .5px;
+}
+.insta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--groen);
+  background: var(--geel);
+  border-radius: 999px;
+  padding: 10px 22px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .25);
+  transition: background .15s, transform .15s;
+}
+.insta-btn:hover { background: var(--goud); transform: translate(-1px, -1px); }
+.insta-btn svg { width: 18px; height: 18px; }
+.site-footer .klein {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--geel);
+  margin-top: 18px;
+}
+
+/* ===== responsief ===== */
+@media (max-width: 620px) {
+  .kaart { flex-direction: column; text-align: center; gap: 14px; }
+  .kaart .scheiding { width: 60%; height: 2px; align-self: center;
+    background-image: linear-gradient(90deg, var(--goud) 55%, transparent 45%);
+    background-size: 12px 100%; }
+  .tijd { min-width: 0; }
+}
+
+/* ===== affichedecoraties op de pagina's ===== */
+body { position: relative; overflow-x: hidden; }
+.site-header, .page-head, main, .mini-rij, .golf, .site-footer { position: relative; z-index: 1; }
+.deco { position: absolute; pointer-events: none; z-index: 0; }
+.deco svg { display: block; width: 100%; height: auto; overflow: visible; }
+@media (max-width: 900px) { .deco { display: none; } }
+
+.mini-rij {
+  position: relative; z-index: 1;
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: 42px; padding: 26px 16px 8px;
+}
+.mini-rij svg { height: 46px; width: auto; overflow: visible; }
+
+/* ===== landingspagina (XRDS-stijl) ===== */
+.landing { min-height: 100vh; display: flex; flex-direction: column; }
+.landing .site-header { padding-top: 48px; }
+.menu-groot {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; margin-top: 34px; padding: 0 16px;
+}
+.menu-groot a {
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 900;
+  font-size: clamp(30px, 5.4vw, 52px);
+  line-height: 1.22;
+  color: var(--groen);
+  text-decoration: none;
+  transition: color .15s, letter-spacing .2s;
+}
+.menu-groot a:hover { color: var(--terra); letter-spacing: 1.5px; }
+.landing .info-lijn {
+  text-align: center;
+  margin-top: 38px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--groen-zacht);
+}
+.landing .info-lijn .sep { color: var(--goud); padding: 0 10px; }
+
+/* hover-achtergrondscenes */
+#scenes { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.scene { position: absolute; inset: 0; opacity: 0; transition: opacity .4s ease; }
+.scene.actief { opacity: 1; }
+.scene .vlek { position: absolute; }
+.scene svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* ===== XRDS-layout homepagina: megalogo + pillenmenu ===== */
+.logo-mega { display: block; text-decoration: none; text-align: center; padding: 0 3vw; }
+.logo-mega .woord {
+  display: block;
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 900;
+  font-size: clamp(64px, 15.5vw, 300px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--groen);
+}
+.logo-mega .woord .peer { color: var(--terra); }
+.logo-mega .fest {
+  display: block;
+  margin-top: 1.2vw;
+  font-weight: 600;
+  font-size: clamp(14px, 2.2vw, 34px);
+  letter-spacing: 1.3vw;
+  text-indent: 1.3vw;
+  text-transform: uppercase;
+  color: var(--goud);
+}
+.logo-mega:hover .woord .peer { color: var(--goud); transition: color .2s; }
+
+.menu-xl {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 14px; margin-top: 8vh; padding: 0 16px;
+}
+.menu-xl a {
+  font-weight: 700;
+  font-size: clamp(15px, 1.8vw, 22px);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--groen);
+  border: 3px solid var(--groen);
+  border-radius: 999px;
+  padding: 12px 30px 14px;
+  background: var(--card);
+  text-decoration: none;
+  box-shadow: 3px 3px 0 rgba(51, 80, 44, .18);
+  transition: background .15s, color .15s, transform .15s;
+}
+.menu-xl a:hover {
+  background: var(--groen);
+  color: var(--cream);
+  transform: translate(-1px, -1px);
+}
+
+/* ===== doorlopende homepagina ===== */
+html { scroll-behavior: smooth; }
+.hero-xrds { position: relative; padding: 44px 0 10px; }
+.hero-xrds #scenes { position: absolute; inset: 0; }
+.hero-xrds .info-lijn {
+  text-align: center; margin-top: 6vh;
+  font-weight: 600; font-size: 14px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--groen-zacht);
+  position: relative; z-index: 1; padding: 0 16px;
+}
+.hero-xrds .info-lijn .sep { color: var(--goud); padding: 0 10px; }
+.logo-mega, .menu-xl { position: relative; z-index: 1; }
+
+.sectie { position: relative; padding: 40px 0 0; }
+.sectie-inhoud { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 20px 20px 30px; }
+.sectie .page-head { padding-top: 10px; }
+
+.band { text-align: center; padding: 24px 20px 28px; color: var(--cream); position: relative; z-index: 1; }
+.band .groot {
+  font-family: 'Fraunces', 'TeX Gyre Bonum', serif;
+  font-weight: 700; font-size: 22px; letter-spacing: .5px;
+}
+.band .klein {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--geel); margin-top: 8px;
+}
+.band-groen { background: var(--groen); }
+.band-ink { background: var(--ink); }
+.band-bruin { background: #462C13; }
+.band-olijf { background: #5c6e33; }
+
+/* inktstijl binnen de tattoo-sectie */
+.sectie-ink .page-head h1, .sectie-ink .page-head .sub { color: var(--ink); }
+.sectie-ink .sub { letter-spacing: 14px; text-indent: 14px; }
+.sectie-ink .handle { font-weight: 500; font-size: 15px; letter-spacing: 1.5px; color: var(--ink); opacity: .8; margin-top: 12px; }
+.sectie-ink .kaart { border-color: var(--ink); box-shadow: 6px 6px 0 rgba(23,20,18,.85); }
+.sectie-ink .kaart h2 { color: var(--ink); }
+.sectie-ink .kaart p { color: #4a443f; }
+.sectie-ink .kaart .scheiding { background-image: linear-gradient(var(--ink) 55%, transparent 45%); }
+.wreath-slot { display: flex; justify-content: center; padding-top: 8px; }
+.wreath-slot svg { width: 130px; height: 130px; overflow: visible; }
+.stempel-rij { display: flex; justify-content: center; margin: 30px 0 4px; }
+.stempel {
+  transform: rotate(-2.5deg);
+  border: 3.5px solid var(--terra); color: var(--terra);
+  font-family: 'Fraunces','TeX Gyre Bonum', serif;
+  font-weight: 700; font-size: clamp(19px, 3.6vw, 25px);
+  letter-spacing: 1.5px; padding: 11px 30px 13px;
+  border-radius: 10px; background: var(--card);
+}
+
+/* croque-kleuren binnen de food-sectie */
+.sectie-food .page-head h1 { color: var(--bruin); }
+.sectie-food .page-head .tagline { color: var(--korst); }
+.sectie-food .kaart { border-color: var(--bruin); box-shadow: 7px 7px 0 rgba(92,58,30,.22); }
+.sectie-food .kaart h2 { color: var(--bruin); }
+.sectie-food .kaart p { color: var(--korst); }
+.illu-strook { display: flex; justify-content: center; align-items: flex-end; gap: 30px; padding: 6px 16px 0; position: relative; z-index: 1; flex-wrap: wrap; }
+.illu-strook svg { overflow: visible; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media (max-width: 620px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-grid .kaart { display: block; text-align: center; margin: 0 !important; }
+.contact-grid .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: var(--olijf); }
+.contact-grid .waarde {
+  font-family: 'Fraunces','TeX Gyre Bonum', serif;
+  font-weight: 700; font-size: 20px; margin-top: 8px; color: var(--groen);
+  word-break: break-word;
+}
+.contact-grid .waarde a { text-decoration: none; color: var(--terra); }
+.contact-grid .waarde a:hover { text-decoration: underline; }
+
+/* pil + locatie onder het hero-menu */
+.hero-pill-blok { text-align: center; margin: 26px 0 4vh; position: relative; z-index: 1; padding: 0 16px; }
+.hero-pill {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 10px 30px 11px;
+  border-radius: 999px;
+}
+.hero-pill-blok .locatie {
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--groen-zacht);
+}
+
+/* 'ook' vóór de tweede croqueprijs */
+.prijs .ook {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.62em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--goud);
+  margin-right: 9px;
+  vertical-align: 0.08em;
+}
+
+/* vaste afficheversieringen in de hero */
+.hero-xrds .deco { z-index: 0; }
+.hero-pill-blok { position: relative; }
+.hero-pill-blok .zon {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -62%);
+  width: min(340px, 52vw);
+  pointer-events: none;
+}
+.hero-pill { position: relative; }
+
+/* gesplitste pillen + fruitrij in de hero */
+.adres-blok { margin: 20px 0 0; }
+.adres-blok .hero-pill { background: var(--groen); }
+.hero-fruit { gap: 36px; padding: 26px 16px 0; }
+.hero-xrds .menu-xl { margin-top: 5vh; }
