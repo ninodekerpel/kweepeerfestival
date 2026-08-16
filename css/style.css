@@ -464,3 +464,16 @@ html { scroll-behavior: smooth; }
 .adres-blok .hero-pill { background: var(--groen); }
 .hero-fruit { gap: 36px; padding: 26px 16px 0; }
 .hero-xrds .menu-xl { margin-top: 5vh; }
+
+/* Twister-kaart: rode rand, blauwe tekst */
+.kaart-twister { border-color: #D0342C; box-shadow: 7px 7px 0 rgba(208, 52, 44, .18); }
+.kaart-twister h2, .kaart-twister .tijd, .kaart-twister p, .kaart-twister p b { color: #1E63C8; }
+.kaart-twister .tijd small { color: #5C8FD6; }
+
+/* Tombola-kaart in de timetable: gouden rand */
+.kaart-tombola { border-color: var(--goud); box-shadow: 7px 7px 0 rgba(233, 168, 59, .25); }
+
+/* Punaise Tattoo-kaart in de timetable: inktzwarte rand */
+.kaart-punaise { border-color: var(--ink); box-shadow: 7px 7px 0 rgba(23, 20, 18, .55); }
+.kaart-punaise h2, .kaart-punaise .tijd { color: var(--ink); }
+.kaart-punaise .tijd small { color: #6b645e; }
